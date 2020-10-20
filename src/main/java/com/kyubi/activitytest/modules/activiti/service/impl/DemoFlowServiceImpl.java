@@ -115,7 +115,7 @@ public class DemoFlowServiceImpl implements IDemoFlowService {
                         sb.append("执行备注：").append(comment.getFullMessage()).append("\n");
                     }
                 }
-                sb.append("====================================").append("\n");
+                sb.append("====================================").append("\n\n");
             }
 
 
