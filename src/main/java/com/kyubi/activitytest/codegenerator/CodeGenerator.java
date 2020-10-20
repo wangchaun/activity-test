@@ -10,7 +10,7 @@ import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.FileType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.kyubi.activitytest.utils.CamelStringUtils;
+import com.kyubi.activitytest.modules.utils.CamelStringUtils;
 
 import java.io.File;
 import java.util.ArrayList;

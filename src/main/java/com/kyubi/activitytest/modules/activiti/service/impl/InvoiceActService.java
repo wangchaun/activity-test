@@ -1,8 +1,8 @@
 package com.kyubi.activitytest.modules.activiti.service.impl;
 
 import com.google.common.collect.Maps;
-import com.kyubi.activitytest.enums.ActivityProcessInstanceEnums;
-import com.kyubi.activitytest.enums.ReviewStatusCommonEnum;
+import com.kyubi.activitytest.modules.enums.ActivityProcessInstanceEnums;
+import com.kyubi.activitytest.modules.enums.ReviewStatusCommonEnum;
 import com.kyubi.activitytest.modules.activiti.model.ActReviewDto;
 import com.kyubi.activitytest.modules.activiti.service.BaseWorkflowService;
 import com.kyubi.activitytest.modules.business.myinvoice.entity.MyInvoice;

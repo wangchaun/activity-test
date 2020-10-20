@@ -1,4 +1,4 @@
-package com.kyubi.activitytest.enums;
+package com.kyubi.activitytest.modules.enums;
 
 import lombok.Getter;
 

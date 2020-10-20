@@ -1,7 +1,7 @@
 package com.kyubi.activitytest.modules.activiti.service;
 
 import com.alibaba.fastjson.JSON;
-import com.kyubi.activitytest.enums.ReviewStatusCommonEnum;
+import com.kyubi.activitytest.modules.enums.ReviewStatusCommonEnum;
 import com.kyubi.activitytest.modules.activiti.model.ActReviewDto;
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.engine.RuntimeService;

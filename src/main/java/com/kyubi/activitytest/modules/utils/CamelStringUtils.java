@@ -1,4 +1,4 @@
-package com.kyubi.activitytest.utils;
+package com.kyubi.activitytest.modules.utils;
 
 /**
  * @author Kyubi

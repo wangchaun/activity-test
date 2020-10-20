@@ -1,6 +1,6 @@
 package com.kyubi.activitytest.modules.business.myinvoice.service;
 
-import com.kyubi.activitytest.enums.ReviewStatusCommonEnum;
+import com.kyubi.activitytest.modules.enums.ReviewStatusCommonEnum;
 import com.kyubi.activitytest.modules.business.myinvoice.entity.MyInvoice;
 import com.baomidou.mybatisplus.extension.service.IService;
 

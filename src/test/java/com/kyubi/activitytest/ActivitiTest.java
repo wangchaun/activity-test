@@ -1,7 +1,7 @@
 package com.kyubi.activitytest;
 
 import com.alibaba.fastjson.JSON;
-import com.kyubi.activitytest.enums.ActivityProcessInstanceEnums;
+import com.kyubi.activitytest.modules.enums.ActivityProcessInstanceEnums;
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.engine.HistoryService;
 import org.activiti.engine.RuntimeService;
@@ -14,8 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 /**

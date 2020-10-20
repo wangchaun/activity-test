@@ -4,7 +4,7 @@ import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.kyubi.activitytest.enums.ReviewStatusCommonEnum;
+import com.kyubi.activitytest.modules.enums.ReviewStatusCommonEnum;
 import com.kyubi.activitytest.modules.activiti.service.impl.InvoiceActService;
 import com.kyubi.activitytest.modules.business.myinvoice.entity.MyInvoice;
 import com.kyubi.activitytest.modules.business.myinvoice.mapper.MyInvoiceMapper;
@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import java.util.Date;
 
-import static com.kyubi.activitytest.enums.ReviewStatusCommonEnum.INIT;
+import static com.kyubi.activitytest.modules.enums.ReviewStatusCommonEnum.INIT;
 
 /**
  * <p>

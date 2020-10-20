@@ -1,7 +1,7 @@
 /**
  * 供应商相关审核表业务
  */
-package com.kyubi.activitytest.enums;
+package com.kyubi.activitytest.modules.enums;
 
 
 import lombok.Getter;

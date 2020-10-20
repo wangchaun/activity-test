@@ -1,7 +1,7 @@
 package com.kyubi.activitytest.modules.activiti.model;
 
-import com.kyubi.activitytest.enums.ActivityProcessInstanceEnums;
-import com.kyubi.activitytest.enums.ReviewStatusCommonEnum;
+import com.kyubi.activitytest.modules.enums.ActivityProcessInstanceEnums;
+import com.kyubi.activitytest.modules.enums.ReviewStatusCommonEnum;
 import lombok.Builder;
 import lombok.Data;
 

@@ -1,5 +1,5 @@
 package com.kyubi.activitytest.config;
-import com.kyubi.activitytest.enums.DBTypeEnum;
+import com.kyubi.activitytest.modules.enums.DBTypeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

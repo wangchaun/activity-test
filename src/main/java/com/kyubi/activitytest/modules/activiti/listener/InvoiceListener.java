@@ -1,7 +1,6 @@
 package com.kyubi.activitytest.modules.activiti.listener;
 
-import com.kyubi.activitytest.enums.ReviewStatusCommonEnum;
-import com.kyubi.activitytest.modules.business.myinvoice.entity.MyInvoice;
+import com.kyubi.activitytest.modules.enums.ReviewStatusCommonEnum;
 import com.kyubi.activitytest.modules.business.myinvoice.service.IMyInvoiceService;
 import lombok.extern.slf4j.Slf4j;
 import org.activiti.engine.delegate.DelegateExecution;
