@@ -23,7 +23,7 @@
       <bpmn:incoming>Flow_0x5c0jj</bpmn:incoming>
       <bpmn:outgoing>Flow_037zs0r</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:userTask id="Activity_0q29jp4" name="第三步" camunda:assignee="rrrr">
+    <bpmn:userTask id="Activity_0q29jp4" name="第二步" camunda:assignee="rrrr">
       <bpmn:extensionElements>
         <camunda:executionListener delegateExpression="${invoiceListener}" event="start">
           <camunda:field name="message">
@@ -34,7 +34,7 @@
       <bpmn:incoming>Flow_0cfakgd</bpmn:incoming>
       <bpmn:outgoing>Flow_14b8a6h</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:endEvent id="Event_1bsw8ek" name="审核通过">
+    <bpmn:endEvent id="Event_1bsw8ek" name="流程完成了">
       <bpmn:extensionElements>
         <camunda:executionListener delegateExpression="${invoiceListener}" event="start">
           <camunda:field name="message">
@@ -87,7 +87,7 @@
       <bpmndi:BPMNShape id="Event_1bsw8ek_di" bpmnElement="Event_1bsw8ek">
         <dc:Bounds x="762" y="232" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="758" y="275" width="45" height="14" />
+          <dc:Bounds x="753" y="275" width="55" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1jrbgnq_di" bpmnElement="Activity_01slkic">
