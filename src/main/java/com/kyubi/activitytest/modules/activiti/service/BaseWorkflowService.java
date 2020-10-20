@@ -39,15 +39,7 @@ public abstract class BaseWorkflowService {
 
         log.info("[完成流程图某个节点 variables={}]", JSON.toJSONString(variables));
         ActReviewDto reviewDto = (ActReviewDto) variables.get("reviewDto");
-
         ReviewStatusCommonEnum statusEnum = reviewDto.getReviewStatusCommonEnum();
-
-        if (StringUtils.isNotBlank(reviewDto.getReviewStatus())) {
-            statusEnum = ReviewStatusCommonEnum.getReviewStatusReviewEnum(reviewDto.getReviewStatus());
-        }
-
-        log.info("[完成流程图某个节点 ={}]", JSON.toJSONString(statusEnum.getActName()));
-
         if (statusEnum != null) {
             log.info("公用流程枚举存在，走公用流程");
             this.completeFlowCommon(variables);
@@ -63,9 +55,8 @@ public abstract class BaseWorkflowService {
         ActReviewDto reviewDto = (ActReviewDto) variables.get("reviewDto");
 
         ReviewStatusCommonEnum statusEnum = reviewDto.getReviewStatusCommonEnum();
-
         ReviewStatusCommonEnum checkEnum = ReviewStatusCommonEnum.getReviewStatusReviewEnum(reviewDto.getReviewStatus());
-
+        log.info("[完成流程图某个节点 ={}]", JSON.toJSONString(checkEnum.getActName()));
         if (ReviewStatusCommonEnum.INIT.equals(statusEnum)) {
             createFlow(variables);
             return;
