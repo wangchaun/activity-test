@@ -75,9 +75,13 @@ public class FlowController {
     }
 
     @GetMapping("/completeFlow/{processId}")
-    @ApiOperation(httpMethod = "GET", value = "完成工作流")
+    @ApiOperation(httpMethod = "GET", value = "完成工作流下一个任务")
     public String completeFlow(@PathVariable String processId) {
         Task task = taskService.createTaskQuery().processInstanceId(processId).singleResult();
+        if (task == null) {
+            return "操作失败!流程已终将，无任务完成";
+        }
+        taskService.setAssignee(task.getId(), "system-api");
         taskService.complete(task.getId());
 
         return "【" + task.getName() + "】 任务完成！";
@@ -117,8 +121,8 @@ public class FlowController {
             for (HistoricActivityInstance hai : instances) {
                 sb.append("步骤ID：").append(hai.getActivityId()).append("\n");
                 sb.append("步骤名称：").append(hai.getActivityName()).append("\n");
-                sb.append("任务ID：").append(hai.getTaskId()).append("\n");
-                sb.append("执行人：").append(hai.getAssignee()).append("\n");
+                sb.append("任务ID：").append(hai.getTaskId() == null ? "无" : hai.getTaskId()).append("\n");
+                sb.append("执行人：").append(hai.getAssignee() == null ? "未指定" : hai.getAssignee()).append("\n");
                 if (hai.getTaskId() != null) {
                     Comment comment = getHisDataByTaskId(processInstanceHistoryLog.getHistoricData(), hai.getTaskId());
                     if (comment != null) {
@@ -155,10 +159,10 @@ public class FlowController {
         Task task = taskService.createTaskQuery().processInstanceBusinessKey(processId).singleResult();
 
         if (task == null) {
-            taskService.createTaskQuery().processInstanceId(processId).singleResult();
+            task = taskService.createTaskQuery().processInstanceId(processId).singleResult();
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(processId.concat(" : 下一个任务：\n\n"));
+        sb.append("流程ID：").append(processId.concat(" 的下一个任务：\n\n"));
 
         taskInfo(task, sb);
 
@@ -166,24 +170,28 @@ public class FlowController {
     }
 
     private void taskInfo(Task task, StringBuilder sb) {
-        sb.append("代办任务ID:"+task.getId()).append("\n");
-        sb.append("代办任务name:"+task.getName()).append("\n");
-        sb.append("代办任务创建时间:"+task.getCreateTime()).append("\n");
-        sb.append("代办任务办理人:"+task.getAssignee()).append("\n");
-        sb.append("流程实例ID:"+task.getProcessInstanceId()).append("\n");
-        sb.append("执行对象ID:"+task.getExecutionId()).append("\n");
+        if (task == null) {
+            sb.append("无任务");
+            return;
+        }
+        sb.append("代办任务ID:" + task.getId()).append("\n");
+        sb.append("代办任务名称:" + task.getName()).append("\n");
+        sb.append("代办任务创建时间:" + task.getCreateTime()).append("\n");
+        sb.append("代办任务办理人:" + (task.getAssignee() == null ? "未指定" : task.getAssignee())).append("\n");
+        sb.append("流程实例ID:" + task.getProcessInstanceId()).append("\n");
+        sb.append("执行对象ID:" + task.getExecutionId()).append("\n");
         sb.append("====================================").append("\n");
     }
 
     @GetMapping("/flowByName/{userName}")
-    @ApiOperation(httpMethod = "GET", value = "获取指定人的工作列表")
+    @ApiOperation(httpMethod = "GET", value = "获取指定人的任务列表")
     public String getFlowTaskByUserName(@PathVariable String userName) {
         List<Task> taskList = taskService.createTaskQuery().taskAssignee(userName).list();
         StringBuilder sb = new StringBuilder();
         sb.append(userName.concat(" :对应的任务列表：\n\n"));
-        if(taskList.size()>0){
+        if (taskList.size() > 0) {
 
-            for (Task task : taskList){
+            for (Task task : taskList) {
                 taskInfo(task, sb);
             }
 
