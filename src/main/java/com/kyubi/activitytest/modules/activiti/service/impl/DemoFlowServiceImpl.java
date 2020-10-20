@@ -34,7 +34,7 @@ import static cn.hutool.core.date.DatePattern.CHINESE_DATE_TIME_PATTERN;
 @Service
 @Slf4j
 @Lazy
-public class DemoFlowService implements IDemoFlowService {
+public class DemoFlowServiceImpl implements IDemoFlowService {
 
     @Resource
     private RuntimeService runtimeService;
