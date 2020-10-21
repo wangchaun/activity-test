@@ -89,7 +89,6 @@ public class MybatisPlusConfig {
      * @methodName: 定义事务
      * @param:
      * @Description: 定义事务
-     * @author: 作者名 byu@xiaohongshu.com
      * @date: 19/2/22 下午3:33
      */
     @Bean
@@ -103,7 +102,6 @@ public class MybatisPlusConfig {
      * @methodName: 定义事务
      * @param:
      * @Description: 定义事务
-     * @author: 作者名 byu@xiaohongshu.com
      * @date: 19/2/22 下午3:33
      */
     @Bean

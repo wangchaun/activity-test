@@ -21,7 +21,7 @@
         </camunda:executionListener>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0x5c0jj</bpmn:incoming>
-      <bpmn:outgoing>Flow_1gzx6nh</bpmn:outgoing>
+      <bpmn:outgoing>Flow_02u9i2f</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:userTask id="Activity_0q29jp4" name="第二步" camunda:assignee="rrrr">
       <bpmn:extensionElements>
@@ -31,7 +31,7 @@
           </camunda:field>
         </camunda:executionListener>
       </bpmn:extensionElements>
-      <bpmn:incoming>Flow_1gzx6nh</bpmn:incoming>
+      <bpmn:incoming>Flow_0xij0ng</bpmn:incoming>
       <bpmn:outgoing>Flow_14b8a6h</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:endEvent id="Event_1bsw8ek" name="流程完成了">
@@ -44,9 +44,13 @@
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_14b8a6h</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:userTask id="Activity_01slkic" name="临时插进来的一步" />
+    <bpmn:userTask id="Activity_01slkic" name="临时插进来的一步">
+      <bpmn:incoming>Flow_02u9i2f</bpmn:incoming>
+      <bpmn:outgoing>Flow_0xij0ng</bpmn:outgoing>
+    </bpmn:userTask>
     <bpmn:sequenceFlow id="Flow_14b8a6h" sourceRef="Activity_0q29jp4" targetRef="Event_1bsw8ek" />
-    <bpmn:sequenceFlow id="Flow_1gzx6nh" sourceRef="waitPA" targetRef="Activity_0q29jp4" />
+    <bpmn:sequenceFlow id="Flow_02u9i2f" sourceRef="waitPA" targetRef="Activity_01slkic" />
+    <bpmn:sequenceFlow id="Flow_0xij0ng" sourceRef="Activity_01slkic" targetRef="Activity_0q29jp4" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="DEMO">
@@ -58,9 +62,17 @@
         <di:waypoint x="228" y="250" />
         <di:waypoint x="300" y="250" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1gzx6nh_di" bpmnElement="Flow_1gzx6nh">
+      <bpmndi:BPMNEdge id="Flow_02u9i2f_di" bpmnElement="Flow_02u9i2f">
         <di:waypoint x="400" y="250" />
-        <di:waypoint x="560" y="250" />
+        <di:waypoint x="425" y="250" />
+        <di:waypoint x="425" y="120" />
+        <di:waypoint x="450" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xij0ng_di" bpmnElement="Flow_0xij0ng">
+        <di:waypoint x="500" y="160" />
+        <di:waypoint x="500" y="185" />
+        <di:waypoint x="570" y="185" />
+        <di:waypoint x="570" y="210" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
         <dc:Bounds x="192" y="232" width="36" height="36" />

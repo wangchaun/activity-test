@@ -24,8 +24,8 @@ public class InvoiceTaskListener implements TaskListener {
     public void notify(DelegateTask delegateTask) {
         if (delegateTask.getName().equals(ReviewStatusCommonEnum.PURCHASE_REVIEWING.getActName())) {
 
-//            log.info("设置该步审核人-wangsm");
-//            taskService.setAssignee(delegateTask.getId(), "wangsm");
+            log.info("设置该步审核人-wangsm");
+            taskService.setAssignee(delegateTask.getId(), "wangsm");
         }
     }
 }

@@ -10,6 +10,7 @@ import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -52,6 +53,7 @@ public class SwaggerConfiguration {
         return new ApiInfoBuilder()
                 .title("test-activiti服务")
                 .description("工作流服务")
+                .contact(new Contact("王思明", "http://localhost:8080/test", "wangsiming1314@163.com"))
                 .termsOfServiceUrl("")
                 .version("1.0")
                 .build();
