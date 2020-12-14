@@ -43,7 +43,7 @@ public class ActivitiConfiguration {
         Resource[] resources = null;
         // 启动自动部署流程
         try {
-            resources = new PathMatchingResourcePatternResolver().getResources("classpath*:templates/*.bpmn");
+            resources = new PathMatchingResourcePatternResolver().getResources("classpath*:bpmn/*.bpmn");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -5,7 +5,7 @@ spring:
     proxy-target-class: true
     auto: true
   datasource:
-    # 测试环境 数据源
+    # 工作流 数据源
     local:
       url: jdbc:mysql://localhost:3306/activiti?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&useSSL=false&rewriteBatchedStatements=true
       username: root
@@ -14,7 +14,7 @@ spring:
       initialSize: 5
       minIdle: 5
       maxActive: 20
-    # 预发环境 数据源
+    # 业务 数据源
     online:
       url: jdbc:mysql://localhost:3306/my_business?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&useSSL=false&rewriteBatchedStatements=true
       username: root
@@ -64,6 +64,25 @@ spring:
         login-password: admin
         allow: 127.0.0.1
         #deny: 192.168.1.100
+  velocity:
+    cache: false
+#    date-tool-attribute: dateTool
+#    number-tool-attribute: numberTool
+    request-context-attribute: req
+    prefixL: /views/
+    suffixL: .vm
+    resource-loader-path: classpath:/views/
+    expose-request-attributesL: true
+    expose-session-attributesL: true
+    expose-spring-macro-helpersL: true
+    content-typeL: text/html
+    charsetL: UTF-8
+#    toolbox-config-locationL: classpath:toolbox.xml
+    properties:
+#      velocimacro.library: inc/macro.vm
+#      userdirective: cn.mysteel.web.velocity.directive.RemoteInclude
+      directive.set.null.allowed: true
+
 
 mybatis-plus:
   # 配置slq打印日志
@@ -88,3 +107,20 @@ server:
 
 #      sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector   # 自定义 SQL 注入器
 #      # 自定义 公共字段 自动填充策略接口实现，参考：http://mp.baomidou.com/#/auto-fill
+
+
+dubbo:
+  application:
+    name: mysteel-test
+    organization: mysteel
+    architecture: activiti-test
+    environment: product
+    owner: gl
+  reference:
+    check: false
+    timeout: 60000
+    retries: 0
+    loadbalance: roundrobin
+    eacService.version: 1.4.1
+    abstractRedisCache.version: 1.0.1
+  container: spring

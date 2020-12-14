@@ -57,7 +57,41 @@
         </dependency>
         <!-- swagger2  restful api 文档  end -->
 
+        <!--  钢联工作流相关 开始-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>2.5.5-mysteel</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.mysteel</groupId>
+            <artifactId>mysteel-basedata-admin-remote-api</artifactId>
+            <version>1.0.3-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>*</artifactId>
+                    <groupId>*</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.mysteel.workflow</groupId>
+            <artifactId>mysteel-workflow-api</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>mysteel</groupId>
+            <artifactId>mysteel-base</artifactId>
+            <version>20130327</version>
+        </dependency>
+        <!--  钢联工作流相关 结束-->
         <!--mybatis plus start-->
         <dependency>
             <groupId>com.baomidou</groupId>
