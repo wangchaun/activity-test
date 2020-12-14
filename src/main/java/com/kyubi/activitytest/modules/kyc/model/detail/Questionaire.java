@@ -34,7 +34,6 @@ public class Questionaire implements Serializable {
     @ApiModelProperty(value="问卷名称",name="quName",example="")
     private String quName;
 
-
     /**
      * 问卷回复
      */
