@@ -34,7 +34,9 @@ public enum ReviewStatusCommonEnum {
     REVIEW_REJECTED("900", "审核驳回",""),
     REVIEW_REJECTED_BY_PURCHASE("900", "采购初审驳回",""),
     REVIEW_REJECTED_BY_MANAGER("925", "经理复审驳回",""),
-    REVIEW_REJECTED_BY_FINANCE("935", "财务审核驳回","")
+    REVIEW_REJECTED_BY_FINANCE("935", "财务审核驳回",""),
+
+    REVIEW__BY_LD("666", "直属领导审批","needPass"),
     ;
 
     /**
